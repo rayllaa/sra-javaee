@@ -1,0 +1,279 @@
+@charset "ISO-8859-1";
+
+.layout-topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 75px;
+    background-color: #BFE387;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+    padding-left: 10px;
+    margin-bottom: 200px;
+    padding-top: 20px;
+}
+
+.layout-menubar{
+	position: fixed;
+	width: 100%;
+    height: 50px;
+    background-color: #BFE387;
+    padding-left: 10px;
+    margin-bottom: 60px;
+    padding-top: 10px;
+	
+}
+
+
+h1{ 
+	display: inline-block;
+	text-align: left;
+	margin-left: 100px;
+	margin-top: 30px;
+}
+
+.font-menu{
+	
+	color : #fff;
+	background: #BFE387;
+	-webkit-box-shadow: 0px 0px 8px #BFE387;
+	box-shadow: 0px 0px 8px #BFE387;
+}
+
+.sra{
+	color: white;
+	font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+.sra:hover{
+	color: rgb(232,232,232);
+}
+
+.yui-skin-sam .yui-navset {
+        width: 500px;
+        height: 300px;
+}
+
+<!--MenuBar-->
+
+.ui-menuitem-link, .ui-state-hover{
+	background: #BFE387 !important;
+}
+.submenu{
+		background: white !important;
+}
+.submenu:hover, .submenu:active {
+	color: white;
+	background: #BFE387 !important;
+}
+.item:hover, .item:visited, .item:focus, .item:active{
+	    background: #BFE387 !important;
+}
+
+.c:hover, .c:active, .c:visited{
+	  background: #BFE387 !important;
+}
+
+.ui-datatable-selectable:hover, .ui-datatable-selectable:active{ 
+	background-color: #BFE387 !important;
+	}
+	
+.ui-state-highlight{
+	background: #BFE387 !important;
+}
+.ui-widget-content:visited{
+		  background: #BFE387 !important;
+	
+}
+
+.ui-menubar,.ui-menu-child,.ui-menu {
+    background: #BFE387 !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    font-family: arial;
+    color: white;
+}
+
+.ui-panelmenu, .ui-panelmenu-content, .ui-menuitem-link:hover, .ui-menuitem-link:focus, .ui-menuitem-link:visited, .ui-menuitem-link:active {
+    background-color: #BFE387 !important;
+}
+
+<!--Fica por trás-->
+
+.menu, .ui-menuitem-text{
+	color: white;
+   font-family: Arial, sans-serif, "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; 
+} 
+.menu:hover{
+		background-color: #BADA55; !important;
+	
+}
+.ui-menuitem-text:hover, .ui-menuitem-text:focus, .ui-menuitem-text:active{
+	color: #edf0f5; 
+}
+
+<!--Select Checkbox menu-->
+.ui-selectcheckboxmenu-panel{
+	background-color: #edf0f5;
+}
+ .ui-selectcheckboxmenu-label, .ui-selectcheckboxmenu-label-container{
+	background-color: #BADA55;
+}
+
+.ui-chkbox-box, .ui-chkbox-icon{
+		border: 2px solid rgb(215,217, 219);
+}
+.ui-selectmanybutton{
+	color: #BADA55;
+}
+
+.ui-datepicker{
+		background-color: #edf0f5;
+}
+.ui-datepicker-header{
+	background-color: #BADA55;
+}
+.ui-datepicker-next, .ui-datepicker-prev{
+	background-color: #edf0f5;
+}
+
+.ui-datepicker td{
+	border: 1px solid white;
+}
+
+.ui-datalist-content{
+	border: 0px; 
+}
+.ui-menu-list{
+	background-color: white;
+}
+
+ .ui-widget-header{
+ 
+ }
+.ui-widget-content{
+	font-size: 17px;
+}
+<!-- Tabela -->
+.ui-state-highlight:hover, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{
+	background: red; !important;
+}
+.ui-datatable {
+    background-color: #ffffff;
+    color: #333333;
+    padding: 0.571em 0.857em;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    justify: center;
+  
+}
+.ui-datatable-header{
+	border: none; !important;
+}
+
+<!-- SelectManyButton -->
+
+.ui-selectmanybutton-items:hover, .ui-selectmanybutton-list:hover{
+	color: white; !important;
+	background-color:  #8bc34a; !important;
+}
+
+.ui-selectlistbox-item{
+		background-color:  #8bc34a; !important;
+}
+
+<!---Texto botão quando ativo-->
+.ui-button-text:hover{
+	color: white; !important;
+}
+
+<!---Cor do botão quando ativo-->
+.ui-state-active, body .ui-buttonset:not(.ui-splitbutton) > .ui-button.ui-state-active {
+    background-color: #BFE387;
+    border-color: white;
+    color: #ffffff;
+}
+
+.cont{
+    border: 2px solid #edf0f5;
+    padding: 90px;
+}
+
+.calendar:active, .calendar:focus {
+    border-color: #BADA55; }
+    
+  .calendarl:hover, .calendar:active, .calendar:focus {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important; }
+}
+
+.foot{
+	border-top: 2px solid #edf0f5;
+}
+
+.tbalimento{
+	width: 450px;
+}
+
+.tabela{
+	horizontal-align:center;
+}
+
+.selected{
+	background-color: #BFE387;
+}
+.visible{
+	overflow: visible !important; 
+    color: black !important;
+}
+
+.value {
+        font-weight: bold;
+    }
+
+.busca-instantanea{
+	padding: 0.429em 0.857em 0.429em 0.857em;
+	margin: 0;
+	border-bottom: 1px solid #eaeaea;
+	background-color: #ffffff;
+	color: #333333;
+	position: relative;
+}
+
+.botao{
+	padding: 5px;
+}
+
+.link{
+	margin-top: 20px;
+	color: #8BC267;
+}
+.link:hover{
+	color: #489B46;
+}
+.sra{
+	padding: 70px;
+}
+
+.menu{
+
+}
+
+.label{
+	text-align: rigth;
+}
+
+.value {
+        font-weight: bold;
+    }    
+
+h3, img{
+	display: inline-block;
+}
+

@@ -1,0 +1,5 @@
+.classpath
+.project
+.settings/
+mariadb-java-client-2.4.0.jar
+MANIFEST.MF
