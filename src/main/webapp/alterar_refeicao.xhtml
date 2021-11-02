@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link rel="stylesheet" type="text/css" href="css/estilo.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet"/>
+	<link rel="stylesheet" href="fonts/icomoon/style.css"/>
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/aos.css"/> <!-- efeito font aparecer-->
+    <link rel="stylesheet" href="css/style.css"/>
+</h:head>
+
+<h:body>	
+	 <header class="site-navbar bg-white js-sticky-header site-navbar-target">
+		<ui:include src="menubar_adm.xhtml" />
+	 </header>
+	 
+	 <div class="row center">
+		<h:form id="form" class="mb-5">
+			 <p:messages id="messages" showDetail="true" closable="true">
+		       			 <p:autoUpdate />
+		    	</p:messages>
+
+			<div class="col-md-12 center home mb-5">
+				<div class="cont col-md-12 px-5 py-5">
+					<div class="text-center center mt-5"> 
+					    <p:panel header="Alterar Refeição" class="h4 mb-5 lead ">
+					        <h:panelGrid columns="2" cellpadding="5" class="mt-5">
+									
+									<h:outputLabel  for="data" value="Data" class="lead text-black mt-3 mb-0" />
+	       						 	<p:calendar id="data" value="#{refeicaoBean.pesquisaData}" pattern="dd/MM/yyyy" mask="true" class="fontmenu" required="true" requiredMessage="Campo em branco." />
+												     		   				        
+						        <div class="col-md-8">
+							        <div class="d-flex justify-content-end ">
+							        	<h:commandButton value="Pesquisar" id="salvar" action="#{refeicaoBean.salvarRefeicao}"  process="@form" class="btn btn-outline-success bt mt-5"/> 
+							 		</div>
+						 		</div>	 			
+						 		
+					        </h:panelGrid>
+					 </p:panel>
+				 </div>  
+			 </div> 	 
+		 </div> 
+	  </h:form>
+  </div>	
+
+	<script src="js/calendar.js"></script>
+</h:body>
+</html>
+
+
+
+
+
+
+
+
+

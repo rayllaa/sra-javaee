@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link rel="stylesheet" type="text/css" href="css/estilo.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet"/>
+	<link rel="stylesheet" href="fonts/icomoon/style.css"/>
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/aos.css"/> <!-- efeito font aparecer-->
+    <link rel="stylesheet" href="css/style.css"/>
+</h:head>
+
+<h:body>	
+	<ui:include src="menubar_adm.xhtml"/>
+	<div class="row center">
+		<h:form id="form" class="mb-5 col-md-10">
+			<div class="text-center center mt-5"> 
+			    <p:panel header="Cardápio" class="h4 mt-5 col-md-12">  
+				    <div class="justify-content-center center col-md-12">
+				        <div class="text-center col-md-12 tabela mt-5">	  
+							  <p:dataTable value="#{refeicaoBean.getRefeicoes()}" widgetVar="lista" id="refeicao" var="refeicao" rules="rows" scrollable="true" scrollHeight="500" >
+								     <p:column headerText="Data" width="8%">
+								        <h:outputText value="#{refeicao.dataString}" />
+								    </p:column>
+								     <p:column headerText="Dia Semana" width="15%">
+								        <h:outputText value="#{refeicao.diaSemana}" />
+								    </p:column>
+								     <p:column headerText="Refeição" width="50%" cellSeparator="true" resizable="true" disabled="true">			    
+									    <p:selectManyButton value="#{refeicao.alimentosReservados}">
+								            <f:selectItems value="#{refeicao.alimentos}" var="a" itemLabel="#{a}" itemValue="#{a}" itemDisabled="true" styleClass="selectManyButton"/>
+								        </p:selectManyButton>    
+									 </p:column>  
+							  </p:dataTable>
+					  	</div>
+				  	</div>
+			    </p:panel>
+		    </div>      
+	  </h:form>
+	</div>	
+	
+  <ui:include src="footer.xhtml"/>
+
+	<script src="js/calendar.js"></script>
+	<script type="js/icons.js"></script>
+	
+</h:body>
+</html>
+
+
+
+
+
+
+
+
+

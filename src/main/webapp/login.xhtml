@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link rel="stylesheet" type="text/css" href="css/estilo.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet"/>
+	<link rel="stylesheet" href="fonts/icomoon/style.css"/>
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/aos.css"/> <!-- efeito font aparecer-->
+    <link rel="stylesheet" href="css/style.css"/>
+</h:head>
+
+<h:body>
+	  <header class="site-navbar py-4 bg-white js-sticky-header site-navbar-target">
+		<div class="layout-topbar">
+			<h1 class="mb-0 site-logo text-white"><p:link href="home.html" class="sra" >SRA</p:link></h1>
+		</div>
+     </header>		
+		 
+	 <div class="row mt-2">
+		<div class="col-md-6 text-center home sra">
+		  <img src="img/logo.png" class="col-md-10" alt="logo"/>
+		  <h2 class="pt-0" style="color: gray;"> Sistema para Reserva de Alimentos</h2>
+		  <h5 style="color: gray;">Entre agora no sistema para reservar os alimentos desejados. </h5>
+		</div>
+		 <div class="col-md-6 center home mb-5">
+		 	<div class="cont col-md-7 px-5 py-5">
+				 <h:form id ="login">
+					 <p:messages id="messages" showDetail="true" closable="true">
+			       			 <p:autoUpdate />
+			    	</p:messages>
+				 	<div class="col-md-12">
+				        <h:outputLabel for="usuario" value="Usuário" class="lead text-black  mb-0"/>
+				        <p:inputText id="usuario" value="#{usuarioBean.usuario.login}" class="form-control" required="true"/>
+			        </div>
+			        <div class="col-md-12">
+				        <h:outputLabel for="senha" value="Senha" class="lead text-black mt-3 mb-0" />
+				        <p:password id="senha" value="#{usuarioBean.usuario.senha}" class="form-control" required="true" requiredMessage="Campo em branco."/>
+				        <div class="d-flex justify-content-end ">
+				        	<h:commandButton value="Entrar" action="#{usuarioBean.validacao}" process="@form" class="btn btn-outline-success bt mt-5"/> 
+				 		</div>
+				 	</div>	
+				 	<div class="d-flex justify-content-center">
+				 		 <h:link value="Não possui Cadastro?" outcome="cadastro" class="link"/>
+					</div>  
+				</h:form>
+			 </div>
+		 </div>	  
+	</div>
+	
+ <div class=" row text-right mt-5 pt-2 foot">
+      <div class="col-md-12">
+        <p> &copy; 2019 por SRA. Criado por Raylla Araújo.</p>
+      </div>
+    </div>    
+    <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>  
+  <script src="js/main.js"></script>
+    
+</h:body>
+</html>
+
+
+
+
+
+
+
+
+

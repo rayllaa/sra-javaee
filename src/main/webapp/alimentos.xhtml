@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link rel="stylesheet" type="text/css" href="css/estilo.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet"/>
+	<link rel="stylesheet" href="fonts/icomoon/style.css"/>
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/aos.css"/> <!-- efeito font aparecer-->
+    <link rel="stylesheet" href="css/style.css"/>
+</h:head>
+
+<!-- <ui:include src="menu_adm.xhtml"/> 
+colocar imagem x em limpar
+
+-->
+<h:body>	
+	<ui:include src="menubar_adm.xhtml"/>
+	<div class="row center">
+		
+		<h:form id="form" class="mb-5 col-md-10">
+			<p:messages id="messages" showDetail="true" closable="true">
+				 <p:autoUpdate />
+			</p:messages>	 
+			<div class="center mt-5 pt-5 mb-5">
+				
+	        	<h:panelGrid columns="4" cellpadding="5" class="mt-5">
+		            <h:outputLabel value="Descrição:" for="desc" class="lead"></h:outputLabel>
+		            <p:inputText id="desc" value="#{alimentoBean.alimento.descricao}"  onkeyup="PF('lista').filter()"  class="form-control d-inline" required="true" requiredMessage="Campo em Branco!"/>
+		            <p:commandButton id="btn_add" value="+" action="#{alimentoBean.addAlimento}" update="alimentos" onComplete="PF('lista').addRow()" process="@form" class="btn btn-outline-success bt px-0"/>
+		        </h:panelGrid>	    
+			</div>  
+    
+		    <div class="justify-content-center center col-md-12">
+			   <div class="justify-content-center  text-center table-hover col-md-7 tabela">
+				  <p:dataTable value="#{alimentoBean.getAlimentos()}" widgetVar="lista" id="alimentos" var="a" emptyMessage="Não há alimento cadastrado." rules="rows" scrollable="true" scrollHeight="450" >
+					     <p:column headerText="Alimento" width="8%">
+					        <h:outputText value="#{a.descricao}" />
+					    </p:column>
+				  </p:dataTable>
+			    </div>  
+		  </div>
+	  </h:form>
+	</div> 
+	   <ui:include src="footer.xhtml"/>
+
+</h:body>
+</html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet"/>
+	<link rel="stylesheet" href="fonts/icomoon/style.css"/>
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/aos.css"/> <!-- efeito font aparecer-->
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/estilo.css"/>
+    
+</h:head>
+
+<!-- 
+	- verificar , dropdown-item
+	- Retirar vermelho, mudar cor
+	- Colocar usuário do lado direito 
+	
+ -->
+<h:body>
+     <div class="col-md-12 mb-5">
+   	  <div class="row mt-2">
+	     <h:form>  
+		    <p:menubar styleClass="ui-menubar ui-state-hover">
+			        <p:menuitem value="Cardápio"  class="item" url="cardapio_adm.xhtml"/>
+			        
+			        <p:submenu label="Refeição" class="item mx-2" >
+			            <p:menuitem value="Adicionar" class="item" url="adicionar_refeicao.xhtml" />
+			             <p:separator/>
+			            <p:menuitem value="Alterar" class="item" url="#" />
+			        </p:submenu>
+			        
+			        <p:submenu label="Reservas"  class="font-menu mx-2 item">
+			            <p:menuitem value="Alimentos" class="item" url="reservas_alimento.xhtml" />
+			             <p:separator/>
+			            <p:menuitem value="Refeição" url="reservas_refeicoes.xhtml" class="item font-menu"/>
+			              <p:separator/>
+			            <p:menuitem value="Alunos" url="reservas_alunos.xhtml" class="item font-menu"/>
+			        </p:submenu>
+			 
+			        <p:menuitem value="Alunos" class="item mx-2" url="alunos.xhtml"/>
+			     
+				   <p:menuitem value="Alimentos" class="item mx-2" url="alimentos.xhtml"/>
+			        
+			        <p:submenu label="#{usuario.login}" style="margin-left: 90%; position: fixed;" styleClass="scrr"> 
+			            <p:menuitem value="Dados Usuário" url="#" class="font-menu item"/>
+			             <p:separator/>
+			            <p:menuitem value="Sair" actionListener="#{usuarioBean.finalizeSession}" url="login.xhtml" class="font-menu item ">
+			            </p:menuitem>
+			        </p:submenu>
+			    </p:menubar>
+		</h:form>	
+	</div>			
+  </div>
+</h:body>
+</html>
+
+
+
+
+
+
+
+
+

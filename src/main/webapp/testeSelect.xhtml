@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link rel="stylesheet" type="text/css" href="css/estilo.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet"/>
+	<link rel="stylesheet" href="fonts/icomoon/style.css"/>
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/aos.css"/> <!-- efeito font aparecer -->
+    <link rel="stylesheet" href="css/style.css"/>
+</h:head>
+
+<h:body>	
+	
+		<h:form>
+		    <p:selectManyButton value="#{refeicaoBean.teste()}">
+	            <f:selectItem itemLabel="1" itemValue="true" styleClass="selectManyButton" />
+	            <f:selectItem itemLabel="2" itemValue="True" styleClass="selectManyButton" />
+	        </p:selectManyButton>    
+    	</h:form>    
+    	
+    	<p:selectOneMenu id="onSale" value="#{refeicaoBean.teste()}">  
+
+			    <f:selectItem itemLabel="Select One" itemValue="" />  
+			    <f:selectItem itemLabel="Yes" itemValue="true" />  
+			    <f:selectItem itemLabel="No" itemValue="false" />  
+		</p:selectOneMenu>  
+		
+			<label>Estado</label>
+			 
+			<p:selectManyCheckbox value="#{refeicao.alimentos}" widgetVar="manyCheckWV">
+			   <f:selectItems value="#{refeicao.alimentos}" var="a"  itemLabel="#{a}" itemValue="#{a}"/>
+			</p:selectManyCheckbox>
+			 
+			<p:commandLink value="Selecionar todos" 
+			   onclick="selectAllCheckBoxes(PF('manyCheckWV'), false);"
+			   update="@form">
+			</p:commandLink>
+			 
+			<p:commandLink value="Limpar todos"
+			   onclick="selectAllCheckBoxes(PF('manyCheckWV'), true);"
+			   update="@form">
+			</p:commandLink> 
+						      
+ 
+   <script>
+   function selectAllCheckBoxes(manyCheckBoxes, estado) {
+	   manyCheckBoxes.inputs.each(function() {
+	      $(this).prop('checked', estado);
+	      $(this).trigger('click');
+	   });
+	}
+   </script> 	 
+          
+	<script src="js/calendar.js"></script>
+	<script type="js/icons.js"></script>
+
+</h:body>
+</html>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

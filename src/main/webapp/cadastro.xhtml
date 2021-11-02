@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link rel="stylesheet" type="text/css" href="css/estilo.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet"/>
+	<link rel="stylesheet" href="fonts/icomoon/style.css"/>
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/aos.css"/> <!-- efeito font aparecer-->
+    <link rel="stylesheet" href="css/style.css"/>
+</h:head>
+
+	<!--  
+		- Diminuir tamanho dos campos
+		- Editar borda dos campos
+		- botao rigth
+		- Ocupar 100% largura
+		- Prontuário e curso
+		- hábito alimentar radio
+	rg mask="99.999.999-9" 	
+	cpf	mask="999.999.999-99"
+	-->
+	
+<h:body class="bg-light"> 
+	<p:messages id="messages" showDetail="true" closable="true">
+		   <p:autoUpdate/>
+	</p:messages>
+	 <div class="site-section bg-light">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+			 <h2 class="section-title mb-3">Cadastro</h2>
+            <h3 class="section-sub-title">Informe seus dados</h3>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-7 mb-5 mr-0">
+
+          <h:form class="p-5 bg-white">
+			 	 <div class="mt-2 mb-5 border-bottom">
+			 	 	<h4>Nome</h4>
+			 	 </div>
+	              <div class="row form-group py-2">
+	                <div class="col-md-8 mb-3 mb-md-0 mt-2">
+	                	<h:outputLabel for="nome" value="Nome" class="lead"/>
+	                	<p:inputText id="nome" value="#{usuarioBean.usuario.nome}" class="form-control field" required="true"/>
+	                </div>
+	              </div>   
+	              <div class="mt-5 mb-5 border-bottom">
+			 	 	<h4>Documentos</h4>
+			 	 </div>           
+	              <div class="row form-group py-2">
+	                <div class="col-md-6 mb-3 mb-md-0">
+		                <h:outputLabel for="rg" value="RG" class="lead"/>
+			       		<p:inputMask id="rg" value="#{usuarioBean.usuario.rg}" mask="99.999.999-9" class="form-control" required="true"/>
+	                </div>
+	                <div class="col-md-6 mb-3 mb-md-0">
+		               <h:outputLabel for="cpf" value="CPF" class="lead" />
+			       	   <p:inputMask id="cpf" value="#{usuarioBean.usuario.cpf}" mask="999.999.999-99" class="form-control" required="true"/> 
+	                </div>
+	              </div>
+	              <div class="mt-5 mb-5 border-bottom">
+			 	 	<h4>Contatos</h4>
+			 	 </div>
+	              <div class="row form-group py-2">
+	                <div class="col-md-6 mb-3 mb-md-0">
+	                    <h:outputLabel for="email" value="E-mail" class="lead"/>
+						<p:inputText id="email" value="#{usuarioBean.usuario.email}" class="form-control" required="true" />
+	                </div>
+	                
+	                <div class="col-md-6 mb-3 mb-md-0">
+		                <h:outputLabel for="celular" value="Celular" class="lead"/>
+				        <p:inputMask id="celular" value="#{usuarioBean.usuario.celular}" mask="(99)99999-9999" class="form-control" required="true" />
+	                </div>
+	              </div>
+				 <div class="mt-5 mb-5 border-bottom">
+			 	 	<h4>Informações de Usuário</h4>
+			 	 </div>
+	              <div class="row form-group py-2">
+	                <div class="col-md-6 mb-3 mb-md-0">
+	                  <h:outputLabel for="prontuario" value="Prontuário" class="lead" />
+				  	  <p:inputText id="prontuario" value="#{usuarioBean.aluno.prontuario}" class="form-control" required="true" />
+	                </div>
+	              </div> 
+	              <div class="row form-group pt-5">
+	                <div class="col-md-6 mb-3 mb-md-0">
+	                  <h:outputLabel for="login" value="Login" class="lead" />
+				  	  <p:inputText id="login" value="#{usuarioBean.usuario.login}" class="form-control" required="true" />
+	                </div>
+	                <div class="col-md-6 mb-3 mb-md-0">
+				     <h:outputLabel for="senha" value="Senha" class="lead"/>
+					 <p:password id="senha" value="#{usuarioBean.usuario.senha}" class="form-control" required="true" requiredMessage="Campo em Branco!"/>
+	                </div>
+	              </div> 
+	              <div class="row form-group py-5 col-md-12 col-lg-4">
+	                <div class="col-md-12 ">
+	                	 <h:commandButton value="Cadastrar" action="#{usuarioBean.addUsuario}" class="bt btn btn-outline-success py-2 px-1" process="@form" validateClient="true"/> 
+	          	    </div>     
+	              </div>
+				
+			</h:form>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+	
+	 <div class=" row text-right mt-5 pt-2 foot">
+      <div class="col-md-12">
+        <p> &copy; 2019 por SRA. Criado por Raylla Araújo.</p>
+      </div>
+    </div>
+</h:body>
+</html>

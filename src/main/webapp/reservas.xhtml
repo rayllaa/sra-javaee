@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link rel="stylesheet" type="text/css" href="css/estilo.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet"/>
+	<link rel="stylesheet" href="fonts/icomoon/style.css"/>
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/aos.css"/> <!-- efeito font aparecer-->
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="js/metodos.js"></script>
+    
+    <script>
+    PrimeFaces.locales ['pt_BR'] = {
+    	    closeText: 'Fechar',
+    	    prevText: 'Anterior',
+    	    nextText: 'Próximo',
+    	    monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+    	    monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun', 'Jul','Ago','Set','Out','Nov','Dez'],
+    	    dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
+    	    dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'],
+    	    dayNamesMin: ['D','S','T','Q','Q','S','S'],
+    	    weekHeader: 'Semana',
+    	    weekNumberTitle: 'Sm',
+    	    firstDay: 0,
+    	    isRTL: false,
+    	    showMonthAfterYear: false,
+    	    yearSuffix:'',
+    	    timeOnlyTitle: 'Só Horas',
+    	    timeText: 'Tempo',
+    	    hourText: 'Hora',
+    	    minuteText: 'Minuto',
+    	    secondText: 'Segundo',
+    	    currentText: 'Começo',
+    	    ampm: false,
+    	    month: 'Mês',
+    	    week: 'Semana',
+    	    day: 'Dia',
+    	    allDayText: 'Todo o Dia'
+};
+
+    </script>
+</h:head>
+
+<h:body>	
+	<ui:include src="menubar_adm.xhtml"/>
+	<div class="row center">
+		<h:form id="form" class="mt-5 mb-5 pt-5 col-md-10">
+		
+		<div class="text-center center mt-5"> 
+		 <p:panel header="Reservas" class="h4 mt-5 col-md-9">
+			<div class="center mt-5 pt-3">
+	        	<h:panelGrid columns="4" cellpadding="5" class="mt-2">
+		          <h:outputLabel  for="data" value="Data" class="lead text-black mt-3 mb-0" />
+		       			<p:calendar id="data" value="#{refeicaoBean.data}"  dataLocale="pt_BR" pattern="dd/MM/yyyy" mask="true" class="fontmenu yui-skin-sam yui-navset" styleClass="calendar" required="true" requiredMessage="Campo em Branco" />
+		        </h:panelGrid>	    
+		   </div>
+		   	
+		   	<div class="center mt-3 mb-1">
+		      <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+		        <h:outputLabel value="Reserva:" for="selectOneRadio" class="lead"></h:outputLabel>
+				   <p:selectOneRadio id="selectOneRadio" value="#{reservaBean.valueDefaultRadio}" valueChangeListener="#{reservaBean.eventoRadio}" onchange="evento(this.value)"  column="3">
+					    <f:selectItem itemLabel="Refeição" itemValue="refeicao"/>
+					    <f:selectItem itemLabel="Alimento" itemValue="alimento"/>
+					    <f:selectItem itemLabel="Aluno" itemValue="aluno"/>	
+					    <p:ajax event="change" process="@form" update="reservas" /> 
+				   </p:selectOneRadio>
+	   			</h:panelGrid>
+   			</div>		
+   			
+   			 <div class="d-flex justify-content-end ">
+	        	<h:commandButton value="Aplicar" id="aplicar" action="#{reservaBean.listaReservas}" class="btn btn-outline-success bt mt-5"/> 
+	 		</div>
+   			  </p:panel>
+		 </div>    
+		 
+		  <div class="text-center center"> 
+				    <div class="justify-content-center center col-md-12">
+				        <div class="text-center table-hover col-md-10 tabela mt-5" >	
+				        	<h:panelGroup  id="r">  
+							  <p:dataTable value="#{reservaBean.quantidadeReservaRefeicao()}" id="reservas" var="reserva" emptyMessage="Não há reservas." rules="rows" scrollable="true" scrollHeight="500" >
+								     <p:column headerText="Dia da Semana" width="8%">
+								        <h:outputText value="#{reserva.diaSemana}" />
+								    </p:column>
+								    <p:column headerText="Data" width="15%">
+								        <h:outputText value="#{reserva.dataRefeicaoString}" />
+								    </p:column>
+								     <p:column headerText="Reservas" width="10%">
+								        <h:outputText value="#{reserva.quantidadeReserva}" />
+								    </p:column>
+							  </p:dataTable>
+							</h:panelGroup> 
+					  	</div>
+				  	</div>
+		    </div>   
+		  </h:form> 
+	</div>	
+	
+	    <ui:include src="footer.xhtml"/>
+	
+</h:body>
+</html>
+
+
+
+
+
+
+
+
+

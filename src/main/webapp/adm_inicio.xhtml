@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link rel="stylesheet" type="text/css" href="css/estilo.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet"/>
+	<link rel="stylesheet" href="fonts/icomoon/style.css"/>
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/aos.css"/> <!-- efeito font aparecer-->
+    <link rel="stylesheet" href="css/style.css"/>
+</h:head>
+
+<h:body>
+ 	 <ui:include src="menubar_adm.xhtml"/>
+	 <div class="row center">
+			<div class="col-md-6 text-center pt-5">
+			  <img src="img/logo.png" alt="logo"/>
+			  <h4>Bem-vindo(a) ao SRA, <h:outputLabel value="#{usuario.nome}"/>!</h4>
+			</div>	
+	</div>
+	
+	  <ui:include src="footer.xhtml"/>
+	
+</h:body>
+</html>
+
+
+
+
+
+
+
+
+

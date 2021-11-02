@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet"/>
+	<link rel="stylesheet" href="fonts/icomoon/style.css"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/> <!--sobrepondo css para add o icon menu resposinvo-->
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css"/>
+    <link rel="stylesheet" href="css/aos.css"/> <!-- efeito font aparecer-->
+    <link rel="stylesheet" href="css/style.css"/>
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+  
+  <div class="site-wrap">
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+  </div>
+	
+	<!-- Rolagem links -> acompanhando -->
+	<!--Barra Menu pl-4 my-5 pt-5-->
+    <header class="site-navbar py-4 bg-white js-sticky-header site-navbar-target" role="banner">
+		<div class="container">
+		   <div class="row ">
+			  <div class="col-6 col-xl-2">
+				<h1 class="color mb-0 site-logo">SRA</h1>
+			  </div>
+			  <div class="col-12 col-md-10 d-none d-xl-block">
+				<nav class="site-navigation position-relative text-right" role="navigation">
+				  <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+					<li><a href="#home-section" class="nav-link">Início</a></li>
+					<li><a href="#curiosities-section" class="nav-link">Curiosidades</a></li>
+					<li><a href="#about-section" class="nav-link">Sobre</a></li>
+					<li><a href="#developer-section" class="nav-link">Desenvolvedor</a></li>
+				  </ul>
+				</nav>
+			  </div>
+			   <div class="col-6 d-inline-block d-xl-none ml-md-0 py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black float-right"><span class="glyphicon glyphicon-align-justify"></span></a></div>
+			</div>
+		 </div>
+    </header>
+	
+	 <div class=" row py-5">
+			<div class="col-md-4 home  text-center">
+			  <img src="img/logo.png" alt="logo" class="img-fluid pl-5">
+			</div>
+			
+			<div class="col-md-7 mx-4" id="home-section" data-aos="fade-up" data-aos-delay="400">
+				 <div class="row home text-center pt-5">
+					  <h1 class="text-center ml-4"> Sistema para Reserva de Alimentos</h1>
+				 </div>	  
+				<div class="row text-center">
+					  <h4 class="text-center my-4 ml-4">Entre agora no sistema para reservar os alimentos desejados. </h4><br/> 
+				 </div>	  
+				 <div class="row pt-2">
+				 	<p><a href="login.xhtml" class="btn btn-outline-success mx-2 bt ml-4">Entrar</a></p>
+					 <p><a href="cadastro.xhtml" class="btn btn-outline-success bt">Cadastrar</a></p>
+				 </div>
+			</div>
+    </div>
+
+	 <div class="curiosities" id="curiosities-section">
+          <div class="row"><!--style="background-color: #BADA55;" align-items-start img-fluid-->
+            <div class="col-md-6">
+              <img src="img/alimentos.jpg" alt="Alimentos" class="img-fluid">
+            </div>
+           
+            <div class="col-md-6 py-5 curiosities"> 
+              <h1 class="py-5 font-weight-bold text-center"> Você sabia?</h1>
+              <h4 class="py-4 px-5 mb-5 text-center p">30% dos alimentos produzidos no mundo são descartados, desde a cadeia de produção até os consumidores finais, segundo dados da  Organização das Nações Unidas para a Alimentação e Agricultura  (FAO). </h4>
+              
+              <p class="text-center"><a href="https://nacoesunidas.org/fao-30-de-toda-a-comida-produzida-no-mundo-vai-parar-no-lixo/" class="btn btn-black btn-outline-black rounded-0 mb-5 mb-lg-0">Leia mais</a></p>
+            </div>
+          </div>
+        </div>
+
+    <div class="site-section bg-light" id="about-section">
+      <div class="container">
+        <div class="row my-5 justify-content-center">
+          <div class="col-md-6 my-5 text-center">
+            <h2 class="color section-title mb-3">Sobre o SRA</h2> <!--Mudar fonte-->
+            <h4>O SRA (Sistema de Reserva de Alimentos) é um site direcionado à restaurantes de instituições de ensino a fim de automatizar a relação entre a refeição e os estudantes, e, consequentemente, reduzir ou até anular o desperdício de alimentos nestas.</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+	<!--Tirar???-->
+    <div class="site-section border-bottom" id="developer-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h2 class="mb-3">Desenvolvedor</h2>
+          </div>
+        </div>
+        <div class="row center">
+          <div class="col-md-12 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
+            <div class="person text-center">
+              <img src="img/raylla.jpg" alt="Image" class="img-fluid rounded w-80 mb-4">
+              <h3>Raylla Araújo</h3>
+              <h4 class="mb-6"> Estudante do Técnico de Informática Integrado ao Ensino Médio.</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer bg-white">
+        <div class="row text-right">
+          <div class="col-md-12">
+            <p> &copy; 2019 por SRA. Criado por Raylla Araújo.</p>
+          </div>
+        </div>
+    </footer>
+
+  </div> <!-- .site-wrap -->
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+
+  
+  <script src="js/main.js"></script>
+    
+  </body>
+</html>

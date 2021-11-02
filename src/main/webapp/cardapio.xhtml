@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link rel="stylesheet" type="text/css" href="css/estilo.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet"/>
+	<link rel="stylesheet" href="fonts/icomoon/style.css"/>
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/aos.css"/> <!-- efeito font aparecer-->
+    <link rel="stylesheet" href="css/style.css"/>
+    	<script src="js/metodos.js"></script>
+    
+</h:head>
+
+<h:body>	
+	 <header class="site-navbar bg-white js-sticky-header site-navbar-target">
+		<ui:include src="menubar_aluno.xhtml" />
+	 </header>
+	 
+	 <div class="col-md-12 center home">
+		<h:form id="formulario">
+			<p:messages id="messages" showDetail="true" closable="true">
+					 <p:autoUpdate />
+					</p:messages>
+	        <div class="text-center center mt-5"> 
+		    <p:panel header="Cardápio" class="h4 mt-5 col-md-10">
+		    	<div class="justify-content-center center mb-5">
+			  	 <h:panelGrid columns="4" class="mt-5">
+				        <div class="justify-content-center center col-md-8 text-center table-hover tabela mt-5">	
+					  	 	<p:dataTable value="#{refeicaoBean.getRefeicoes()}" selection="#{reservaBean.refeicaoReservada}" widgetVar="selectMany" rowStyleClass="c" cellPadding="2" var="refeicao" rowKey="#{refeicao.dataString}" scrollable="true" scrollHeight="700" rows="15"  saveOnCellBlur="true" emptyMessage="Não há refeições cadastradas">
+								 
+								  <p:column headerText="Data" width="6%" resizable="true">
+			       						 <h:outputText value="#{refeicao.dataString}" class="fontmenu"/>
+			         			   </p:column>
+			         			
+			         			   <p:column headerText="Dia da Semana" width="7%" resizable="true">
+			       						  <h:outputText value="#{refeicao.diaSemana}"/>
+								   </p:column>
+									
+								    <p:column headerText="Alimentos" width="35%" cellSeparator="true" resizable="true">	
+									    <p:selectManyButton id="selectMany" value="#{refeicao.alimentosReservados}">
+								            <f:selectItems id="selectItems" value="#{refeicao.alimentos}" var="a" itemLabel="#{a}" itemValue="#{a}" styleClass="selectManyButton"/>
+								        </p:selectManyButton>    
+									</p:column>   
+								   
+								  <p:column id="check" selectionMode="multiple" value="true" style="width:16px;text-align:center" class="c">
+								  </p:column>
+								  
+								   <f:facet name="footer">
+								   		 <div class="d-flex justify-content-end"> 
+									 			<p:commandButton id="btn_reservar" value="Salvar" action="#{reservaBean.reserva}"   class="btn btn-outline-success bt mt-5"/>
+									     </div>
+								   </f:facet>
+								   
+								   
+							 </p:dataTable>
+						  </div>		    
+			  	 </h:panelGrid> 
+			  	 
+			  </div> 
+			   </p:panel>
+		   </div>         	        	        
+    	</h:form>    
+     </div>
+          
+     <ui:include src="footer.xhtml"/>
+    
+	<script type="js/icons.js"></script>
+
+</h:body>
+</html>
+
+
+
+
+
+
+
+
+

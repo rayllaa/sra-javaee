@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link rel="stylesheet" type="text/css" href="css/estilo.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet"/>
+	<link rel="stylesheet" href="fonts/icomoon/style.css"/>
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/aos.css"/> <!-- efeito font aparecer-->
+    <link rel="stylesheet" href="css/style.css"/>
+</h:head>
+
+<h:body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">	
+	
+	<div class="col-md-12 mb-5" style="width: 100%;">
+	     <h:form>  
+		    <div class="">
+			    <p:menubar style="width: 100%;">
+			        <p:menuitem value="Cardápio" url="cardapio.xhtml" class="font-menu item"/>
+			        
+			        <p:menuitem value="Preferências" url="#" class="item font-menu mx-2" >
+			        </p:menuitem>
+			        
+			       	  <p:submenu label="#{usuario.login}" style="margin-left: 90%; position: fixed;"> 
+				            <p:menuitem value="Dados Usuário" url="#" class="item font-menu"/>
+				             <p:separator/>
+				            <p:menuitem value="Sair" action="#{usuarioBean.finalizeSession}" class="item font-menu" />
+			         </p:submenu>	 
+			    </p:menubar>
+		     </div>
+		  </h:form>	
+	</div> 
+    
+</h:body>
+</html>
+
+
+
+
+
+
+
+
+

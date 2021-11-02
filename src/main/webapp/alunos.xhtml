@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link rel="stylesheet" type="text/css" href="css/estilo.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet"/>
+	<link rel="stylesheet" href="fonts/icomoon/style.css"/>
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/aos.css"/> <!-- efeito font aparecer-->
+    <link rel="stylesheet" href="css/style.css"/>
+</h:head>
+
+<h:body>	
+	<ui:include src="menubar_adm.xhtml"/>
+	<div class="row center">
+		<h:form id="form" class="mb-5 mt-5">
+			<div class="text-center center mt-5"> 
+				 <p:panel header="Alunos" class="h4 mt-5 col-md-10">  
+				    <div class="justify-content-center center col-md-12">
+				        <div class="text-center table-hover tabela mt-5 pb-4 col-md-12">	  
+							  <p:dataTable value="#{usuarioBean.listaAlunos()}" widgetVar="tableAlunos" emptyMessage="Nenhum aluno encontrado" filteredValue="#{usuarioBean.alunosList}"
+                 globalFilterFunction="#{usuarioBean.globalFilterFunction}" id="alunos" var="aluno" rules="rows" scrollable="true" scrollHeight="250" >
+								     <p:column headerText="Login" width="8%">
+								   <h:outputText value="#{aluno.login}" /> 
+								    </p:column>
+								    <p:column headerText="Prontuário" width="8%">
+								        <h:outputText value="#{aluno.prontuario}" />
+								    </p:column>
+								     <p:column headerText="Nome" width="23%">
+								        <h:outputText value="#{aluno.nome}" />
+								    </p:column>
+								     <p:column headerText="CPF" width="13%">
+								        <h:outputText value="#{aluno.cpf}" />
+								    </p:column>
+								     <p:column headerText="RG" width="12%">
+								        <h:outputText value="#{aluno.rg}" />
+								    </p:column>
+								      <p:column headerText="E-mail" width="20%">
+								        <h:outputText value="#{aluno.email}" />
+								    </p:column>
+								      <p:column headerText="Celular" width="20%">
+								        <h:outputText value="#{aluno.celular}" />
+								    </p:column>
+							  </p:dataTable>
+					  	</div>
+				  	</div>
+				  </p:panel>	
+		    </div>   
+	  </h:form>
+	</div>	
+	
+	<ui:include src="footer.xhtml"/>
+	
+</h:body>
+</html>
+
+
+
+
+
+
+
+
+

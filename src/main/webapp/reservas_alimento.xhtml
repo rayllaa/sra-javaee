@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link rel="stylesheet" type="text/css" href="css/estilo.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet"/>
+	<link rel="stylesheet" href="fonts/icomoon/style.css"/>
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/aos.css"/> <!-- efeito font aparecer-->
+    <link rel="stylesheet" href="css/style.css"/>
+    
+</h:head>
+
+<h:body>	
+	<ui:include src="menubar_adm.xhtml"/>
+	<div class="row center">
+		<h:form id="form" class="mt-5 mb-5 pt-5 col-md-10">   
+			<div class="text-center center mt-3"> 
+			    <div class="justify-content-center center col-md-12">
+			        <div class="text-center table-hover col-md-10 tabela mt-5">	  
+						  <p:dataTable value="#{reservaBean.quantidadeReservaAlimento()}" widgetVar="lista" id="reservas" var="reserva" emptyMessage="Não há reservas." rules="rows" scrollable="true" scrollHeight="500" >
+							     <p:column headerText="Data" width="8%">
+							        <h:outputText value="#{reserva.diaSemana}" />
+							    </p:column>
+							    <p:column headerText="Data" width="10%">
+							        <h:outputText value="#{reserva.dataRefeicaoString}" />
+							    </p:column>
+							    <p:column headerText="Alimento" width="30%">
+							        <h:outputText value="#{reserva.descricaoAlimento}" />
+							    </p:column>
+							     <p:column headerText="Quantidade" width="8%">
+							        <h:outputText value="#{reserva.quantidadeReserva}" />
+							    </p:column>
+						  </p:dataTable>
+				  	</div>
+			  	</div>
+		    </div> 
+	  </h:form>
+	</div>	
+	
+	    <ui:include src="footer.xhtml"/>
+	
+</h:body>
+</html>
+
+
+
+
+
+
+
+
+
